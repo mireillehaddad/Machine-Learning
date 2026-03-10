@@ -221,3 +221,12 @@ y_pred_final = final_model.predict(dtest)
 auc_final = roc_auc_score(y_test, y_pred_final)
 
 print(f"\nTest AUC (final XGBoost): {auc_final:.3f}")
+
+
+import pickle
+
+with open('xgb_model.bin', 'wb') as f_out:
+    pickle.dump((dv_full, final_model), f_out)
+
+print('The model is saved to xgb_model.bin')
+
