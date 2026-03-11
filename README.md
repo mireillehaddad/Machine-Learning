@@ -62,3 +62,13 @@ pip install -r requirements.txt
 ```
 
 ======================================================
+
+# 6. Enviroment management: Docker
+
+- Why we need Docker
+- Running a Python image with docker
+- Dockerfile
+- Building a docker image
+- Running a docker image
+
+
