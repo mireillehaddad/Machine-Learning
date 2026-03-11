@@ -31,3 +31,34 @@ with open('xgb_model.bin', 'rb') as f_in:
     dv, model = pickle.load(f_in)
 
 ======================================================
+
+Virtual enviroment:
+
+.venv\Scripts\activate
+
+
+For virtual enviroment requirements file
+
+```
+pip freeze > requirements.txt
+```
+To install packages from requirements file: in case of repository cloning 
+
+```
+pip install -r requirements.txt
+```
+
+
+Recap after git cloning
+
+```
+git clone <repo_url>
+cd repo
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+======================================================
