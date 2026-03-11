@@ -3,6 +3,7 @@
 import requests
 
 url = 'http://localhost:9696/predict'
+## url = 'https://churn-api-1082768418869.northamerica-northeast1.run.app/predict'##for GCP
 
 customer = {
   "gender": "female",
