@@ -95,3 +95,17 @@ customer = {
     'totalcharges': 29.85
 }
 
+Run 
+
+```
+python predict-deploy.py
+
+curl http://127.0.0.1:9697/predict
+
+05-predict-test.ipynb
+```
+pip install gunicorn
+
+In terminal
+
+gunicorn --bind 0.0.0.0:9696 predict-deploy:app
