@@ -1,13 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-
-get_ipython().run_line_magic('autosave', '0')
-
+# need pip install requests
+# Run when port is live either by docker or predict.py
 import requests
 
 url = 'http://localhost:9696/predict'
-
 
 customer = {
   "gender": "female",
@@ -31,28 +26,9 @@ customer = {
   "totalcharges": 29.85
 }
 
-
-
-
-customer
-
-
-
-
-response = requests.post(url, json=customer)
-
-print(response.status_code)
-print(response.text)
-
-
-
-requests.post(url,json=customer).json()
-
-
-
 response = requests.post(url, json=customer).json()
 
+print(response)
 
-if response['churn'] == True:
-    print('sending promo email to %s' % ('xyz-123'))
-
+if response['churn']:
+    print('sending promo email to xyz-123')

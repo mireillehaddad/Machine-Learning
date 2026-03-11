@@ -75,20 +75,20 @@ pip install -r requirements.txt
  Start a Python container Docker  and open an interactive Python session inside it.
 
 ```
-docker run -it --rm python:3.8.12-slim
+docker run -it --rm python:3.11-slim
 
 or  
 
-docker run -it --rm --entrypoint=bash python:3.8.12-slim
+docker run -it --rm --entrypoint=bash python:3.11-slim
 
 ```
 
-| Part                 | Meaning                        |
-| -------------------- | ------------------------------ |
-| `docker run`         | start a container              |
-| `-it`                | interactive terminal           |
-| `--rm`               | delete container when it stops |
-| `python:3.8.12-slim` | use the Python Docker image    |
+| Part                      | Meaning                        |
+| ------------------------  | ------------------------------ |
+| `docker run`              | start a container              |
+| `-it`                     | interactive terminal           |
+| `--rm`                    | delete container when it stops |
+| `python:python:3.11-slim` | use the Python Docker image    |
 
 
 Every Docker image has a default command (entrypoint).
@@ -102,7 +102,7 @@ python
 
 So normally if you run:
 
-docker run python:3.8.12-slim
+docker run python:python:3.11-slim
 
 you would enter:
 
@@ -151,3 +151,35 @@ COPY . .
 CMD ["python", "predict-deploy.py"]
 
 3️⃣ Build a Docker image
+
+
+Project folder
+   │
+   ├── Dockerfile
+   ├── churn.py
+   ├── requirements.txt
+   │
+   ▼
+docker build -t churn-test .
+   │
+   ▼
+Docker Image (churn-test)
+   │
+   ▼
+docker run churn-test
+   │
+   ▼
+Running Container
+
+======================================================
+
+
+Check that the image exists
+
+Run:
+
+docker images
+======================================================
+
+docker run -it --rm --entrypoint=bash churn-test
+
