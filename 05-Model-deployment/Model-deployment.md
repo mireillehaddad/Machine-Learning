@@ -1,11 +1,10 @@
-
-```
-5.2 Saving and loading the model
+# 2 Saving and loading the model
 
 - Saving the model to pickle
 - Loading the model from pickle
 - Turning our notebook into a python script
-```
+
+
 
 
 ```
@@ -28,13 +27,17 @@ In [2]: ping.ping()
 Out[2]: 'PONG'
 
 ```
-to stop ipython: ctrl+Z
+to stop ipython: ctrl+Z or ctrl+C
 Install Flask:
 
 ```
 pip install flask
 
 ```
+# 3. Web services: Introduction to Flask
+- Writing a simple ping/pong app
+- Querying it with 'Curl' and browser
+
 
 Our new script: ping.py
 ```
@@ -60,4 +63,35 @@ python ping.py
 ```
 curl http://127.0.0.1:9696/ping
 ```
+
+# 4. Serving the churn model with Flask
+
+- Wrapping the predict script into a Flask app
+- Querying it with 'requests'
+- Preparing for production: gunicorn
+- Running it on Windows with waitress
+
+Customer example:
+
+customer = {
+    'gender': 'female',
+    'seniorcitizen': 0,
+    'partner': 'yes',
+    'dependents': 'no',
+    'phoneservice': 'no',
+    'multiplelines': 'no_phone_service',
+    'internetservice': 'dsl',
+    'onlinesecurity': 'no',
+    'onlinebackup': 'yes',
+    'deviceprotection': 'no',
+    'techsupport': 'no',
+    'streamingtv': 'no',
+    'streamingmovies': 'no',
+    'contract': 'month-to-month',
+    'paperlessbilling': 'yes',
+    'paymentmethod': 'electronic_check',
+    'tenure': 1,
+    'monthlycharges': 29.85,
+    'totalcharges': 29.85
+}
 

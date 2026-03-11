@@ -31,11 +31,16 @@ customer = {
     'totalcharges': 29.85
 }
 
-# Transform input
-X = dv.transform([customer])
+def predict(customer):
+    # Transform input
+    X = dv.transform([customer])
+    # Predict churn probability
+    y_pred = model.predict_proba(X)[0, 1]
+    return y_pred
 
-# Predict churn probability
-y_pred = model.predict_proba(X)[0, 1]
+
+y_pred = predict(customer) 
+
 
 print("Customer data:")
 pprint(customer)
